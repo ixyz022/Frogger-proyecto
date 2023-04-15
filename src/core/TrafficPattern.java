@@ -1,8 +1,9 @@
+package src.core;
+
 import java.awt.*;
 import java.util.*;
 
-public class TrafficPattern
-{
+public class TrafficPattern{
 
 	// The pattern should be of the form "RRR  BB L   MMM B  GG "
 	// R == RED
@@ -119,7 +120,7 @@ public class TrafficPattern
 	public void draw(Graphics g)
 	{
 		//g.setColor(Color.DARK_GRAY);
-		//g.fillRect(0,y,(int)bounds.getWidth(), Car.HEIGHT);
+		//g.fillRect(0,y,(int)bounds.getWidth(), src.core.Car.HEIGHT);
 		for(int i = 0; i < cars.size(); i++)
 		{
 			if(cars.get(i) != null)

@@ -1,3 +1,8 @@
+package src.core;
+
+import src.support.FroggerLevel;
+import src.support.FroggerState;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;

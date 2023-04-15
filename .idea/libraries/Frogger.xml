@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Frogger">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Frogger.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Frogger.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
