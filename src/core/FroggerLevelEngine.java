@@ -1,14 +1,16 @@
 package src.core;
 
-import src.support.FroggerLevel;
+import src.core.CarComponents.Car;
+import src.core.TrafficComponents.TrafficPattern;
+import src.froggerLevel.FroggerLevel;
 import src.support.FroggerState;
 
 import java.awt.*;
 
 public class FroggerLevelEngine
 {
-	public static final int WIDTH = 250;
-	public static final int HEIGHT = 250;
+	public static int WIDTH = 250;
+	public static int HEIGHT = 250;
 
 	private TrafficPattern[] traffic;
 	private Frog frog;
