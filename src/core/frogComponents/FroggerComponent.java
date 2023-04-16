@@ -1,21 +1,19 @@
-package src.core;
+package src.core.frogComponents;
 
-import src.froggerLevel.FroggerLevel;
-import src.froggerLevel.LevelConfig;
-import src.froggerLevel.levels.Level1;
-import src.froggerLevel.levels.Level2;
+import src.core.froggerLevel.FroggerLevelEngine;
+import src.core.froggerLevel.FloggerLevel;
+import src.core.froggerLevel.LevelConfig;
 import src.support.FroggerState;
 
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.*;
 import java.util.List;
 
 public class FroggerComponent extends JComponent implements KeyListener, Runnable {
     private FroggerLevelEngine engine;
     private boolean upPressed, downPressed, leftPressed, rightPressed;
-    private List<FroggerLevel> levels;
+    private List<FloggerLevel> levels;
     private int level = 0;
 
     public FroggerComponent() {

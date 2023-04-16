@@ -1,7 +1,7 @@
 // PlayFrogger.java
 package src.support;
 
-import src.core.FroggerComponent;
+import src.core.frogComponents.FroggerComponent;
 
 import javax.swing.*;
 import java.awt.*;

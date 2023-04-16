@@ -1,7 +1,7 @@
 package src.core.TrafficComponents;
 
-import src.core.CarComponents.Car;
-import src.core.Frog;
+import src.core.carComponents.Car;
+import src.core.frogComponents.Frog;
 
 import java.awt.*;
 import java.util.*;

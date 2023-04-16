@@ -1,8 +1,9 @@
-package src.core;
+package src.core.froggerLevel;
 
-import src.core.CarComponents.Car;
+import src.core.carComponents.Car;
 import src.core.TrafficComponents.TrafficPattern;
-import src.froggerLevel.FroggerLevel;
+import src.core.frogComponents.Frog;
+import src.core.froggerLevel.FloggerLevel;
 import src.support.FroggerState;
 
 import java.awt.*;
@@ -26,7 +27,7 @@ public class FroggerLevelEngine
 		frog = new Frog(WIDTH/2, HEIGHT-Frog.RADIUS, getBounds());
 	}
 
-	public FroggerLevelEngine(FroggerLevel level)
+	public FroggerLevelEngine(FloggerLevel level)
 	{
 		this(level.getSpeeds(), level.getPatterns());
 	}

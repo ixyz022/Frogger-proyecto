@@ -1,6 +1,6 @@
 package src.core.TrafficComponents;
 
-import src.core.CarComponents.Car;
+import src.core.carComponents.Car;
 
 import java.awt.*;
 import java.util.*;

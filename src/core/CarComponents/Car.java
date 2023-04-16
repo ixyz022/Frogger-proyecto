@@ -1,4 +1,4 @@
-package src.core.CarComponents;
+package src.core.carComponents;
 
 import java.awt.*;
 

@@ -1,11 +1,10 @@
-package src.froggerLevel.levels;
+package src.core.froggerLevel.levels;
 
-import src.froggerLevel.FroggerLevel;
-import src.froggerLevel.LevelStructure;
+import src.core.froggerLevel.FloggerLevel;
 
 public class Level2 {
-    public static FroggerLevel getFroggerLevel() {
-        return new FroggerLevel(
+    public static FloggerLevel getFroggerLevel() {
+        return new FloggerLevel(
                 new int[]{2, 1, 2, 1, 2},
                 new String[]{"RR         L  ", "BB  LL  RR     ", "    RR    MM     ",
                         "MMM     MMM     ", "RR      L     "});
