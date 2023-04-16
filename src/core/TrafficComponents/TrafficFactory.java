@@ -1,6 +1,7 @@
 package src.core.TrafficComponents;
 
 import src.core.carComponents.Car;
+import src.core.carComponents.cars.*;
 
 import java.awt.*;
 import java.util.*;
@@ -17,13 +18,13 @@ public class TrafficFactory extends TrafficPatternBase {
         for (int next = 0; next * Car.WIDTH <= bounds.getWidth(); next++) {
             switch (pattern.charAt(next)) {
                 case 'R' ->
-                        this.cars.add(new Car(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed, Color.RED));
+                        this.cars.add(new RedCar(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed));
                 case 'B' ->
-                        this.cars.add(new Car(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed, Color.BLUE));
+                        this.cars.add(new BlueCar(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed));
                 case 'L' ->
-                        this.cars.add(new Car(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed, Color.BLACK));
+                        this.cars.add(new BlackCar(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed));
                 case 'M' ->
-                        this.cars.add(new Car(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed, Color.MAGENTA));
+                        this.cars.add(new MagentaCar(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed));
                 default ->
                         this.cars.add(new Car(left ? next * Car.WIDTH : (int) bounds.getWidth() - next * Car.WIDTH, y, speed, null));
             }
@@ -36,13 +37,12 @@ public class TrafficFactory extends TrafficPatternBase {
         if(next >= pattern.length())
             next = 0;
         switch (pattern.charAt(next)) {
-            case 'R' -> cars.add(new Car(left ? (int) bounds.getWidth() : 0, y, speed, Color.RED));
-            case 'B' -> cars.add(new Car(left ? (int) bounds.getWidth() : 0, y, speed, Color.BLUE));
-            case 'L' -> cars.add(new Car(left ? (int) bounds.getWidth() : 0, y, speed, Color.BLACK));
-            case 'M' -> cars.add(new Car(left ? (int) bounds.getWidth() : 0, y, speed, Color.MAGENTA));
+            case 'R' -> cars.add(new RedCar(left ? (int) bounds.getWidth() : 0, y, speed));
+            case 'Y' -> cars.add(new YellowCar(left ? (int) bounds.getWidth() : 0, y, speed));
+            case 'B' -> cars.add(new BlueCar(left ? (int) bounds.getWidth() : 0, y, speed));
+            case 'L' -> cars.add(new BlackCar(left ? (int) bounds.getWidth() : 0, y, speed));
+            case 'M' -> cars.add(new MagentaCar(left ? (int) bounds.getWidth() : 0, y, speed));
             default -> cars.add(new Car(left ? (int) bounds.getWidth() : 0, y, speed, null));
         }
     }
-
-
 }

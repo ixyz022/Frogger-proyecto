@@ -39,10 +39,9 @@ public class FroggerLevelEngine
 
 	public void update()
 	{
-		for(int i = 0; i < traffic.length; i++)
-		{
-			traffic[i].update();
-			if(traffic[i].intersects(frog))
+		for (TrafficPattern trafficPattern : traffic) {
+			trafficPattern.update();
+			if (trafficPattern.intersects(frog))
 				state = FroggerState.HIT;
 		}
 		if(getWinBounds().contains(frog.getBounds()))

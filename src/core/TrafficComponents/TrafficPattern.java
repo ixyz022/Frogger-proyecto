@@ -35,10 +35,10 @@ public class TrafficPattern extends TrafficPatternBase {
         for (int i = 0; i < cars.size(); i++) {
             if (cars.get(i) != null) {
                 if (left) {
-                    cars.add(i, cars.get(i).moveLeft());
+                    cars.add(i, (Car) cars.get(i).moveLeft());
                     cars.remove(i + 1);
                 } else {
-                    cars.add(i, cars.get(i).moveRight());
+                    cars.add(i, (Car) cars.get(i).moveRight());
                     cars.remove(i + 1);
                 }
             }
@@ -54,7 +54,7 @@ public class TrafficPattern extends TrafficPatternBase {
 
     public boolean intersects(Frog f) {
         for (Car car : cars) {
-            if ((car != null) && !car.empty() && car.intersects(f.getBounds()))
+            if ((car != null) && !car.isEmpty() && car.intersects(f.getBounds()))
                 return true;
         }
         return false;
