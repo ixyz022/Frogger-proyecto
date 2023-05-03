@@ -3,8 +3,7 @@ package src.core.carComponents;
 import java.awt.*;
 
 public class Car extends Rectangle implements Vehicle {
-	private final int speed;
-	private final Color color;
+	private final int speed;vate final Color color;
 
 	public Car(int x, int y, int speed, Color color) {
 		super(x, y, WIDTH, HEIGHT);

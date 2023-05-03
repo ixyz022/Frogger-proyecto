@@ -1,6 +1,6 @@
 package src.core.frogComponents;
 
-import src.core.froggerLevel.FroggerLevelEngine;
+import src.core.froggerEngine.FroggerLevelEngine;
 import src.core.froggerLevel.FloggerLevel;
 import src.core.froggerLevel.LevelConfig;
 import src.support.FroggerState;

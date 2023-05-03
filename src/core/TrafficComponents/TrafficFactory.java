@@ -9,6 +9,7 @@ import java.util.*;
 public class TrafficFactory extends TrafficPatternBase {
     private int next = 0;
     Vector<Car> cars = new Vector<Car>();
+
     public TrafficFactory(int speed, String pattern, boolean left, Rectangle bounds, int y) {
         super(speed, pattern, left, bounds, y);
     }
@@ -31,6 +32,7 @@ public class TrafficFactory extends TrafficPatternBase {
         }
         return this.cars;
     }
+
 
     public void createCar() {
         next++;

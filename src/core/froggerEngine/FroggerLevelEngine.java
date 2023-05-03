@@ -1,5 +1,6 @@
-package src.core.froggerLevel;
+package src.core.froggerEngine;
 
+import src.core.TrafficComponents.CarManager;
 import src.core.carComponents.Car;
 import src.core.TrafficComponents.TrafficPattern;
 import src.core.frogComponents.Frog;
@@ -7,16 +8,16 @@ import src.core.froggerLevel.FloggerLevel;
 import src.support.FroggerState;
 
 import java.awt.*;
+import java.util.Vector;
 
 public class FroggerLevelEngine
 {
 	public static int WIDTH = 250;
 	public static int HEIGHT = 250;
 
-	private TrafficPattern[] traffic;
+	private final TrafficPattern[] traffic;
 	private Frog frog;
 	private FroggerState state = FroggerState.MOVING;
-
 	public FroggerLevelEngine(int[] speeds, String[] patterns)
 	{
 		traffic = new TrafficPattern[patterns.length];
@@ -29,7 +30,7 @@ public class FroggerLevelEngine
 
 	public FroggerLevelEngine(FloggerLevel level)
 	{
-		this(level.getSpeeds(), level.getPatterns());
+		this(level.speeds(), level.patterns());
 	}
 
 	public Rectangle getBounds()
@@ -85,9 +86,8 @@ public class FroggerLevelEngine
 	public void draw(Graphics g)
 	{
 		frog.draw(g);
-		for(int i = 0; i < traffic.length; i++)
-		{
-			traffic[i].draw(g);
+		for (TrafficPattern trafficPattern : traffic) {
+			trafficPattern.draw(g);
 		}
 
 		if(state == FroggerState.HIT)

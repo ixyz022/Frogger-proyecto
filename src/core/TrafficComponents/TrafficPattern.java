@@ -4,56 +4,30 @@ import src.core.carComponents.Car;
 import src.core.frogComponents.Frog;
 
 import java.awt.*;
-import java.util.*;
 
 public class TrafficPattern extends TrafficPatternBase {
 
-    // The pattern should be of the form "RRR  BB L   MMM B  GG "
-    // R == RED
-    // B == BLUE
-    // L == BLACK
-    // M == MAGENTA
-
-    private TrafficFactory trafficFactory;
-    private Vector<Car> cars;
+    private CarManager carManager;
 
     public TrafficPattern(int speed, String pattern, boolean left, Rectangle bounds, int y) {
         super(speed, pattern, left, bounds, y);
-        initCars();
-    }
-
-    public void initCars() {
-        trafficFactory = new TrafficFactory(speed, pattern, left, bounds, y);
-        cars = trafficFactory.initCars();
+        carManager = new CarManager(speed, pattern, left, bounds, y);
     }
 
     public void addCar() {
-        trafficFactory.createCar();
+        carManager.addCar();
     }
 
     public void moveCars() {
-        for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i) != null) {
-                if (left) {
-                    cars.add(i, (Car) cars.get(i).moveLeft());
-                    cars.remove(i + 1);
-                } else {
-                    cars.add(i, (Car) cars.get(i).moveRight());
-                    cars.remove(i + 1);
-                }
-            }
-        }
+        carManager.moveCars(left);
     }
 
     public void testForNewCar() {
-        if (!cars.isEmpty() && !cars.get(0).intersects(bounds)) {
-            cars.remove(0);
-            addCar();
-        }
+        carManager.testForNewCar(bounds);
     }
 
     public boolean intersects(Frog f) {
-        for (Car car : cars) {
+        for (Car car : carManager.getCars()) {
             if ((car != null) && !car.isEmpty() && car.intersects(f.getBounds()))
                 return true;
         }
@@ -61,9 +35,7 @@ public class TrafficPattern extends TrafficPatternBase {
     }
 
     public void draw(Graphics g) {
-        //g.setColor(Color.DARK_GRAY);
-        //g.fillRect(0,y,(int)bounds.getWidth(), src.core.CarComponents.Car.HEIGHT);
-        for (Car car : cars) {
+        for (Car car : carManager.getCars()) {
             if (car != null)
                 car.draw(g);
         }
